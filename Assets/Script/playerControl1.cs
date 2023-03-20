@@ -9,7 +9,7 @@ public class playerControl1 : MonoBehaviour
     public float speed = 10f;
     Rigidbody2D myBody;
     bool grounded = false;
-    public float castDist = 0.2f;
+    public float castDist = 0.1f;
     public float gravityScale = 5f;
     public float gravityFall = 30f;
     public float jumpLimit = 100f;
@@ -24,6 +24,7 @@ public class playerControl1 : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(jumpCount);
         horizontalMove = Input.GetAxis("Horizontal");
 
         if (Input.GetButtonDown("Jump") && (grounded || jumpCount < maxJumpCount))
