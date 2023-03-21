@@ -10,6 +10,8 @@ public class player_horizontalcontrol : MonoBehaviour
 
     Rigidbody2D rb;
 
+    private bool facingRight = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,5 +28,20 @@ public class player_horizontalcontrol : MonoBehaviour
     void FixedUpdate()
     {
         rb.velocity = new Vector2(move.x * speed, rb.velocity.y);
+
+        if( rb.velocity.x < 0 && facingRight )
+        {
+            Flip();
+        }
+        else if( rb.velocity.x > 0 && !facingRight)
+        {
+            Flip();
+        }
+    }
+
+    private void Flip()
+    {
+        facingRight = !facingRight;
+        transform.Rotate(0f, 180f, 0f);
     }
 }
