@@ -138,3 +138,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   rb: {fileID: 9186644760747492452}
+  phase1: {fileID: 6890171417896752708, guid: 86ae7de409eb54f619fb1328e4d42480, type: 3}
+  phase2: {fileID: 0}
+  phases: 0

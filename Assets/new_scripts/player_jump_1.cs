@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class player_jump : MonoBehaviour
+public class player_jump_1 : MonoBehaviour
 {
     Rigidbody2D rb;
-    [SerializeField] int jumpPower;
-    [SerializeField] float fallMultiplier;
+    [SerializeField] int jumpPower1;
+    [SerializeField] float fallMultiplier1;
 
     public Transform groundCheck;
     public LayerMask groundLayer;
@@ -24,14 +24,15 @@ public class player_jump : MonoBehaviour
     void Update()
     {
         isGrounded = Physics2D.OverlapCapsule(groundCheck.position, new Vector2(20.73f, 2.5f), CapsuleDirection2D.Horizontal, 0, groundLayer);
-        if (Input.GetKey(KeyCode.Space) && isGrounded)
+        if (Input.GetKey(KeyCode.UpArrow) && isGrounded)
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpPower);
+        
+            rb.velocity = new Vector2(rb.velocity.x, jumpPower1);
         }
 
         if (rb.velocity.y < 0)
         {
-            rb.velocity -= vecGravity * fallMultiplier * Time.deltaTime;
+            rb.velocity -= vecGravity * fallMultiplier1 * Time.deltaTime;
         }
     }
 }
