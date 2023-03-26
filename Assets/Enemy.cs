@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    private int Boxnum = 15;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,5 +21,6 @@ public class Enemy : MonoBehaviour
     void destoryobject()
     {
         Destroy(gameObject);
+        Boxnum -= 1;
     }
 }
