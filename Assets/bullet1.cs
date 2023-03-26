@@ -28,8 +28,7 @@ public class bullet1 : MonoBehaviour
                 Destroy(hitInfo);
 
                 Destroy(gameObject);
-
-
+             
             }
         }
       
