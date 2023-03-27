@@ -13,6 +13,8 @@ public class player_jump : MonoBehaviour
     bool isGrounded;
     Vector2 vecGravity;
 
+    public AudioSource jump;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +29,7 @@ public class player_jump : MonoBehaviour
         if (Input.GetKey(KeyCode.Space) && isGrounded)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpPower);
+            jump.Play();
         }
 
         if (rb.velocity.y < 0)

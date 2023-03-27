@@ -11,11 +11,14 @@ public class weapon : MonoBehaviour
     
     public bool shooting = false;
 
+    public AudioSource shot;
+
     // Update is called once per frame
     void Update()
     {
         if (Input.GetButtonDown("Fire1") && !shooting)
         {
+            shot.Play();
             Shoot();
             shooting = false;
         }
