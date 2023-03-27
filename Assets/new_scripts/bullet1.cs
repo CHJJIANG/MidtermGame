@@ -26,13 +26,13 @@ public class bullet1 : MonoBehaviour
             if(hitInfo.name == "Enemy")
             {
                 Destroy(hitInfo);
-
                 Destroy(gameObject);
+
              
             }
         }
       
     }
 
-   
+
 }
